@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "69312EA6C99EA1AAA03716A9F1B9091A07578F83",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "54CF83EB19C64B852B574B1262EBE8C2E39FB04F" : 9223372036854775807,
+    "69312EA6C99EA1AAA03716A9F1B9091A07578F83" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5BA97F77-56EA-4C2F-BD87-58291AE0C3FA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "54CF83EB19C64B852B574B1262EBE8C2E39FB04F" : "",
+    "69312EA6C99EA1AAA03716A9F1B9091A07578F83" : "Calculator\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Calculator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Calculator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Chayanne90\/Tap-me-Fast.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "54CF83EB19C64B852B574B1262EBE8C2E39FB04F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Chayanne90\/Calculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69312EA6C99EA1AAA03716A9F1B9091A07578F83"
+    }
+  ]
+}
