@@ -24,6 +24,7 @@ struct CalculatorBrain {
         "e": Operation.constant(M_E),
         "√": Operation.unaryOperation(sqrt),
         "cos": Operation.unaryOperation(cos),
+        "sin": Operation.unaryOperation(sin),
         "±" : Operation.unaryOperation({-$0}),
         "×" : Operation.binaryOperation({$0 * $1}), // closures
         "÷" : Operation.binaryOperation({$0 / $1}),
@@ -63,10 +64,6 @@ struct CalculatorBrain {
             accumulator = pendingBinaryOperation!.perform(with: accumulator!)
             pendingBinaryOperation = nil
         }
-        
-    
-    
-    
     }
     
     private var pendingBinaryOperation: PendingBinaryOperation?
