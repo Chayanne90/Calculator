@@ -17,6 +17,8 @@ struct CalculatorBrain {
         case unaryOperation((Double) -> Double)
         case binaryOperation((Double,Double) -> Double)
         case equals
+        case dot
+        
     }
     
     private var operations: Dictionary<String,Operation> = [
@@ -25,14 +27,17 @@ struct CalculatorBrain {
         "√": Operation.unaryOperation(sqrt),
         "cos": Operation.unaryOperation(cos),
         "sin": Operation.unaryOperation(sin),
-        "±" : Operation.unaryOperation({-$0}),
-        "×" : Operation.binaryOperation({$0 * $1}), // closures
+        "tan" : Operation.unaryOperation(tan),
+        "x²" : Operation.binaryOperation(pow),
+        "±" : Operation.unaryOperation({-$0}),// closures
+        "×" : Operation.binaryOperation({$0 * $1}),
         "÷" : Operation.binaryOperation({$0 / $1}),
         "+" : Operation.binaryOperation({$0 + $1}),
         "-" : Operation.binaryOperation({$0 - $1}),
-        "=" : Operation.equals
-    ]
-    
+        "=" : Operation.equals,
+        "." : Operation.dot,
+        
+        ]
     
     mutating func performOperation( _ symbol: String){
         
@@ -51,12 +56,21 @@ struct CalculatorBrain {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
                     accumulator = nil
                 }
-
             case .equals:
                 performPendingBinaryOperation()
+            default:break
             }
         }
     }
+    
+    // clear funciton "c"
+    mutating func clear(){
+        accumulator = nil
+        pendingBinaryOperation = nil
+    }
+    
+
+        
     
     private mutating func performPendingBinaryOperation(){
         
@@ -69,31 +83,25 @@ struct CalculatorBrain {
     private var pendingBinaryOperation: PendingBinaryOperation?
     
     private struct PendingBinaryOperation{
-    
+        
         let function: (Double, Double) -> Double
         let firstOperand: Double
-        
-        
         func perform(with secondOperand: Double) -> Double {
             return function(firstOperand, secondOperand)
             
-        
         }
-    
+        
     }
-    
     mutating func setOperand(_ operand: Double){
         accumulator = operand
-        
     }
-    
     var result: Double?{
         get{
             
             return accumulator
         }
         
-        }
- }
+    }
+}
 
 
