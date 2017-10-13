@@ -27,7 +27,7 @@ struct CalculatorBrain {
         "cos": Operation.unaryOperation(cos),
         "sin": Operation.unaryOperation(sin),
         "tan" : Operation.unaryOperation(tan),
-        "x²" : Operation.binaryOperation({pow($0,$1)}),
+        "x²" : Operation.unaryOperation({ pow($0, 2)}),
         "x³" : Operation.unaryOperation({ pow($0, 3)}),
         "x⁻¹" : Operation.unaryOperation({ 1 / $0 }),
         "10ˣ" : Operation.unaryOperation({ pow(10, $0)}),
@@ -67,12 +67,18 @@ struct CalculatorBrain {
         }
     }
     
+    func setOperand(variable named: String){
+        
+        
+        
+        
+    }
+    
     // clear funciton "c"
     mutating func clear(){
         accumulator = 0
         pendingBinaryOperation = nil
         array.removeAll()
-        
     }
     
     var resultPending: Bool{
@@ -108,7 +114,6 @@ struct CalculatorBrain {
             return function(firstOperand, secondOperand)
         }
     }
-    
     mutating func setOperand(_ operand: Double){
         accumulator = operand
         array.append(String(operand))

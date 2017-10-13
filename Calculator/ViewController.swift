@@ -34,7 +34,8 @@ class ViewController: UIViewController {
             display2.text = " "
             brain.clear()
             userTyping = false
-        }
+        }   
+        
         if digit == "."{         // " . " button better solution
             display.text! = "."
             display.text = "0\(digit)"
