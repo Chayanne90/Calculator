@@ -76,6 +76,10 @@ class ViewController: UIViewController {
         if let result = brain.result{
             displayValue = result
         }
+        
+        if let variable = sender.currentTitle{
+            brain.setOperand(variable: variable)
+        }
         display2.text! = brain.description
     }
 }

@@ -72,6 +72,10 @@ struct CalculatorBrain {
         
         
         
+        
+        
+        
+        
     }
     
     // clear funciton "c"
