@@ -67,17 +67,6 @@ struct CalculatorBrain {
         }
     }
     
-    func setOperand(variable named: String){
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-    
     // clear funciton "c"
     mutating func clear(){
         accumulator = 0
@@ -121,6 +110,12 @@ struct CalculatorBrain {
     mutating func setOperand(_ operand: Double){
         accumulator = operand
         array.append(String(operand))
+    }
+    
+    mutating func setOperand(variable named: String){
+        
+        array.append(String(named))
+        
     }
     
     var result: Double?{

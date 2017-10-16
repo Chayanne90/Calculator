@@ -139,9 +139,6 @@
                                 <state key="normal" title="M">
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="Perform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NCa-0Q-Uao"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgR-FI-iS0">
                                 <rect key="frame" x="34" y="302" width="55" height="55"/>
@@ -434,7 +431,7 @@
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="Perform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="inP-xA-fER"/>
+                                    <action selector="TouchMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHT-Ow-eQu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -443,6 +440,7 @@
                     <connections>
                         <outlet property="display" destination="ccA-IR-Yek" id="E5A-jo-6Il"/>
                         <outlet property="display2" destination="y6y-oT-Jx3" id="bi0-5f-alV"/>
+                        <outlet property="display3" destination="Sip-Lv-S93" id="w3z-F5-t57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

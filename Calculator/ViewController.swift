@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var display: UILabel!
     @IBOutlet var display2: UILabel!
+    @IBOutlet var display3: UILabel!
     var userTyping = false
     
     @IBAction func TouchMe(_ sender: UIButton) {
@@ -41,6 +42,19 @@ class ViewController: UIViewController {
             display.text = "0\(digit)"
             userTyping = true
         }
+        
+        if digit == "M"{
+            userTyping = false
+            
+            
+            
+        }
+        
+        if digit == "→M"{
+            userTyping = false
+            
+            
+        }
     }
     
     @IBAction func Undo(_ sender: UIButton) {
@@ -48,6 +62,16 @@ class ViewController: UIViewController {
         if userTyping, var text = display.text{
             text.remove(at: (text.index(before: (text.endIndex))))
             display.text! = text
+        }
+    }
+    
+
+    var mDisplay: String{
+        get {
+            return display3.text!
+        }
+        set{
+            display3.text! = "M: " +  String(newValue)
         }
     }
     
@@ -77,9 +101,6 @@ class ViewController: UIViewController {
             displayValue = result
         }
         
-        if let variable = sender.currentTitle{
-            brain.setOperand(variable: variable)
-        }
         display2.text! = brain.description
     }
 }
