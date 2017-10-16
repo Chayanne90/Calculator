@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var display3: UILabel!
     var userTyping = false
     
+    
     @IBAction func TouchMe(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         if digit == "c"{
             display.text = "0"
             display2.text = " "
+            display3.text = " "
             brain.clear()
             userTyping = false
         }   
@@ -42,19 +44,21 @@ class ViewController: UIViewController {
             display.text = "0\(digit)"
             userTyping = true
         }
+    }
+    
+    
+    @IBAction func setM(_ sender: UIButton) {
         
-        if digit == "M"{
-            userTyping = false
-            
-            
-            
-        }
+        brain.holdingMValues["M"] = Double(displayValue)
+        mDisplay = String(brain.holdingMValues["M"]!)
+    }
+    
+    @IBAction func Mval(_ sender: UIButton) {
         
-        if digit == "→M"{
-            userTyping = false
-            
-            
-        }
+        userTyping = false
+        brain.setOperand(variable: "M")
+        brain.setOperand(brain.holdingMValues["M"]!)
+        
     }
     
     @IBAction func Undo(_ sender: UIButton) {
@@ -65,13 +69,13 @@ class ViewController: UIViewController {
         }
     }
     
-
+    // m values
     var mDisplay: String{
         get {
             return display3.text!
         }
         set{
-            display3.text! = "M: " +  String(newValue)
+            display3.text! = "M:" + String(newValue)
         }
     }
     
@@ -81,7 +85,7 @@ class ViewController: UIViewController {
         }
         set{
             display.text!  = String(format: "%6g",newValue)
-            display2.text! = String(format: "%6g")
+            display3.text! = String(newValue)
         }
     }
     

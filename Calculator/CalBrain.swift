@@ -12,6 +12,7 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     var array:[String]  = [ ]
+    var holdingMValues = [String: Double]()
     
     private enum Operation {
         case constant(Double)
@@ -114,8 +115,9 @@ struct CalculatorBrain {
     
     mutating func setOperand(variable named: String){
         
+        holdingMValues[named] = holdingMValues[named] ?? 0.0
         array.append(String(named))
-        
+        accumulator = holdingMValues[named]!
     }
     
     var result: Double?{
