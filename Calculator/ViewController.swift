@@ -85,14 +85,14 @@ class ViewController: UIViewController {
         }
         set{
             display.text!  = String(format: "%6g",newValue)
-            display3.text! = String(newValue)
+            
         }
     }
     
     private var brain = CalculatorBrain()
     
     @IBAction func Perform(_ sender: UIButton){
-        if userTyping{
+        if userTyping{ 
             brain.setOperand(displayValue)
             userTyping = false
         }
@@ -104,7 +104,6 @@ class ViewController: UIViewController {
         if let result = brain.result{
             displayValue = result
         }
-        
         display2.text! = brain.description
     }
 }

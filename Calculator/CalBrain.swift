@@ -68,6 +68,8 @@ struct CalculatorBrain {
         }
     }
     
+    
+    
     // clear funciton "c"
     mutating func clear(){
         accumulator = 0
@@ -125,6 +127,11 @@ struct CalculatorBrain {
             return accumulator
         }
     }
+    
+    //    func evaluate(using variables: Dictionary? = nil) -> (result: Double?, isPending: Bool, description: String){
+    //
+    //
+    //    }
 }
 
 
